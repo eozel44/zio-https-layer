@@ -1,4 +1,4 @@
-package eozel.module.http
+package eozel.http
 
 import cats.effect._
 import org.http4s._

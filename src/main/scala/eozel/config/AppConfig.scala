@@ -6,7 +6,6 @@ import zio._
 
 import scala.util.control.NoStackTrace
 
-
 case class HttpConfig(host: String, port: Int, baseUrl: String)
 
 case class AppConfig(http: HttpConfig)

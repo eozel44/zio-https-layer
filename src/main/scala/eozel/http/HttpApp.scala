@@ -3,7 +3,6 @@ package eozel.http
 import cats.effect.{ExitCode => CatsExitCode}
 import eozel.config.{AppConfig, HttpConfig}
 import eozel.http.UserApi
-import eozel.module.http._
 import eozel.service._
 import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.server.Server
