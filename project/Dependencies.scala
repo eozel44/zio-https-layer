@@ -12,6 +12,7 @@ object Dependencies {
     val circeEnum   = "1.7.0"
     val pureConfig  = "0.17.0"
     val http4s      = "0.23.10"
+    val fs2         = "3.2.7"
   }
 
   object Libraries {
@@ -52,6 +53,11 @@ object Dependencies {
       "org.http4s" %% "http4s-blaze-server" % Versions.http4s,
       "org.http4s" %% "http4s-circe"        % Versions.http4s,
       "org.http4s" %% "http4s-dsl"          % Versions.http4s
+    )
+
+    val fs2 = Seq(
+      "co.fs2" %% "fs2-core" % Versions.fs2,
+      "co.fs2" %% "fs2-io" % Versions.fs2
     )
 
   }

@@ -24,7 +24,7 @@ lazy val scalacopts = Seq(
 lazy val mainProject = (project in file("."))
   .settings(
     name := "eozelapp",
-    libraryDependencies ++=  zio ++ http4s ++ catsInterop ++ zioLogging ++ circe ++ pureConfig ++ logback,
+    libraryDependencies ++=  zio ++ http4s ++ catsInterop ++ zioLogging ++ circe ++ pureConfig ++ logback ++ fs2,
     scalacOptions ++= scalacopts,
     fork:=true
   )
