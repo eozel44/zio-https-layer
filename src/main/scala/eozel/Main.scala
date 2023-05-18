@@ -28,7 +28,7 @@ object Main extends App {
 
     val program = for {
       config <- ZIO.service[AppConfig]
-      server <- HttpApp.createHttp4Server(config.http)
+      server <- HttpApp.createHttp4Server(config.http, config.file)
     } yield server
 
     program

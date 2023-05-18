@@ -1,7 +1,7 @@
 package eozel.http
 
 import cats.effect.{ExitCode => CatsExitCode}
-import eozel.config.{AppConfig, HttpConfig}
+import eozel.config._
 import eozel.http.UserApi
 import eozel.service._
 import org.http4s.blaze.server.BlazeServerBuilder
@@ -23,12 +23,13 @@ object HttpApp {
   class ZioApp(httpConfig: HttpConfig)(implicit runtime: zio.Runtime[AppDependencies]) extends HttpRouter[AppTask]
 
   def createHttp4Server(
-    httpConfig: HttpConfig
+    httpConfig: HttpConfig,
+    fileConfig: FileConfig
   ): ZIO[AppDependencies, Throwable, Unit] =
     ZIO.runtime[AppDependencies].flatMap { implicit runtime =>
       val zioApp = new ZioApp(httpConfig)
       val httpRoutes = zioApp.routedHttpApp(
-        "/user" -> UserApi[AppDependencies].userRoutes
+        "/user" -> UserApi[AppDependencies](fileConfig).userRoutes
       )
 
       val httpApp = CORS.policy.withAllowOriginAll

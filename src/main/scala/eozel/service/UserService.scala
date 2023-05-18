@@ -4,6 +4,7 @@ import eozel.config.AppConfig
 import eozel.domain._
 import zio._
 import zio.macros.accessible
+
 import java.time.Instant
 
 @accessible
