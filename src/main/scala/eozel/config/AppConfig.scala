@@ -6,9 +6,11 @@ import zio._
 
 import scala.util.control.NoStackTrace
 
+case class FileConfig(rootPath: String)
+
 case class HttpConfig(host: String, port: Int, baseUrl: String)
 
-case class AppConfig(http: HttpConfig)
+case class AppConfig(http: HttpConfig, file: FileConfig)
 
 object AppConfig {
 
