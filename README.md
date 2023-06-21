@@ -1,4 +1,4 @@
-# ZIO & http4s & fs2
+# ZIO & http4s
 
 Build http server with Http4s and ZIO.
 
